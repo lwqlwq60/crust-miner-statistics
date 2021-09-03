@@ -56,7 +56,7 @@ namespace CrustStatistics
                         "SubScan显示存储空间(TiB)")
                     .Map(3, _ => Math.Round((double)_.Capacity / 1000000000000.0, 5), "上报存储空间(TiB)");
 
-                var file = $"./导出/节点统计{DateTime.Now.ToString("yyyyMMddHHmm")}.xlsx ";
+                var file = $"./导出/节点统计{DateTime.Now.ToString("yyyyMMddHHmm")}.xls ";
                 excel.Save(file, list, $"节点统计 {DateTime.Now.ToString("yyyy-MM-dd")}");
                 Console.WriteLine("统计member成功.");
 
@@ -82,7 +82,7 @@ namespace CrustStatistics
 
                             return "无法获取";
                         }, "收益(CRU)");
-                    var rewardFile = $"./导出/收益历史{DateTime.Now.ToString("yyyyMMddHHmm")}.xlsx ";
+                    var rewardFile = $"./导出/收益历史{DateTime.Now.ToString("yyyyMMddHHmm")}.xls ";
                     rewardExcel.Save(rewardFile, rewards.Data.List,
                         $"收益历史 {DateTime.Now.ToString("yyyy-MM-dd")}）");
                     Console.WriteLine("统计收益成功.");
